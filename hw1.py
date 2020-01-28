@@ -13,7 +13,7 @@ def main():
     dNdt_array = np.zeros((4, 100))
 
     for r in range(0, len(R)):
-        N = (R[r]/radiation_decay_constant)*(1-np.exp(-radiation_decay_constant*t))
+        N = N_0*np.exp(-radiation_decay_constant*t)+(R[r]/radiation_decay_constant)*(1-np.exp(-radiation_decay_constant*t))
         dNdt = -radiation_decay_constant*N+R[r]
         N_array[r, :] = N
         dNdt_array[r, :] = dNdt
@@ -25,6 +25,7 @@ def main():
     plt.xlabel('Time (s)')
     plt.ylabel('N population in nuclei/cm^3')
     plt.grid()
+    plt.legend()
 
     plt.subplot(2, 2, 2)
     plt.title('N population when R(t)=0.01')
@@ -33,6 +34,7 @@ def main():
     plt.xlabel('Time (s)')
     plt.ylabel('N population in nuclei/cm^3')
     plt.grid()
+    plt.legend()
 
     plt.subplot(2, 2, 3)
     plt.title('N population when R(t)=1')
@@ -41,6 +43,7 @@ def main():
     plt.xlabel('Time (s)')
     plt.ylabel('N population in nuclei/cm^3')
     plt.grid()
+    plt.legend()
 
     plt.subplot(2, 2, 4)
     plt.title('N population when R(t)=100')
@@ -49,6 +52,7 @@ def main():
     plt.xlabel('Time (s)')
     plt.ylabel('N population in nuclei/cm^3')
     plt.grid()
+    plt.legend()
 
     plt.show()
 
