@@ -2,11 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def main():
-    t = np.linspace(0, 5, num=100)
+    t = np.linspace(0, 1.6, num=100)
 
     N_0 = 10**20
     K = [0.5, 1.0, 1.5]
-    l = [0.5, 1, 1.001]
+    l = [0.5, 1, 1.5]
 
     N_array = np.zeros((3,100))
 
